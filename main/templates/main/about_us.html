@@ -1,0 +1,82 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+
+<!-- Slider main container -->
+<div class="swiper h-screen">
+	<!-- Additional required wrapper -->
+	<div class="swiper-wrapper">
+		<!-- Slide 1 -->
+		<div class="swiper-slide bg-gray-200 flex items-center justify-center">
+			<img
+				c
+				src="{% static 'slider/1.jpeg' %}"
+				alt="Book 1"
+				class="w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 flex flex-col items-center justify-center">
+				<h2 class="text-3xl font-bold mb-4">Мы на рынке с 2007 года!</h2>
+				<p class="text-lg">
+					Мы - ваш путеводитель в мире книг и знаний. Погрузитесь в наши
+					страницы и откройте для себя новые миры и истории.
+				</p>
+			</div>
+		</div>
+		<!-- Slide 2 -->
+		<div class="swiper-slide bg-gray-200 flex items-center justify-center">
+			<img
+				src="{% static 'images/book2.jpg' %}"
+				alt="Book 2"
+				class="w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 flex flex-col items-center justify-center">
+				<h2 class="text-3xl font-bold mb-4">Широкий выбор книг только у нас</h2>
+				<p class="text-lg">
+					У нас вы найдете не только книги, но и источник вдохновения и
+					воображения. Добро пожаловать в мир наших историй.
+				</p>
+			</div>
+		</div>
+		<!-- Slide 3 -->
+		<div class="swiper-slide bg-gray-200 flex items-center justify-center">
+			<img
+				src="{% static 'images/book3.jpg' %}"
+				alt="Book 3"
+				class="w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 flex flex-col items-center justify-center">
+				<h2 class="text-3xl font-bold mb-4">
+					Подписывайтесь на наши соц.сети!
+				</h2>
+				<p class="text-lg">telegram</p>
+			</div>
+		</div>
+		<!-- Добавьте дополнительные слайды здесь -->
+	</div>
+	<!-- If we need pagination -->
+	<div class="swiper-pagination"></div>
+
+	<!-- If we need navigation buttons -->
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
+	<!-- If we need scrollbar -->
+	<div class="swiper-scrollbar"></div>
+</div>
+
+<!-- Скрипт для инициализации Swiper -->
+<script>
+	var swiper = new Swiper('.swiper', {
+		// Настройки Swiper здесь
+		pagination: {
+			el: '.swiper-pagination',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+	})
+</script>
+
+{% endblock %}

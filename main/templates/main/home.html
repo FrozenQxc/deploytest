@@ -1,11 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>Деплой</h1>
-	</body>
-</html>
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+
+<head>
+	<meta charset="utf-8" />
+	<title>Swiper demo</title>
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+	/>
+</head>
+
+<body class="bg-light">
+	<div class="container-fluid">
+		<div class="swiper-container w-full h-[600px]">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide bg-gray-200 relative">
+					<div
+						class="swiper-slide bg-gray-200 flex items-center justify-center"
+					>
+						<img
+							src="{% static 'slider/2.jpg' %}"
+							alt="Book 1"
+							class="w-full h-full object-cover"
+						/>
+						<div
+							class="absolute inset-0 flex flex-col items-center justify-center text-white"
+						>
+							<h2 class="text-3xl font-bold mb-4">
+								Лучшие книги для вашего удовольствия
+							</h2>
+							<p class="text-lg">
+								Откройте для себя новые миры вместе с нашим книжным магазином
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide bg-gray-200 relative">
+					<div
+						class="swiper-slide bg-gray-200 flex items-center justify-center"
+					>
+						<img
+							src="{% static 'slider/3.jpg' %}"
+							alt="Book 1"
+							class="w-full h-full object-cover"
+						/>
+						<div
+							class="absolute inset-0 flex flex-col items-center justify-center text-white"
+						>
+							<h2 class="text-3xl font-bold mb-4">
+								Погрузитесь в мир приключений и фантазии
+							</h2>
+							<p class="text-lg">
+								Мы предлагаем широкий выбор книг на любой вкус и возраст
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide bg-gray-200 relative">
+					<div
+						class="swiper-slide bg-gray-200 flex items-center justify-center"
+					>
+						<img
+							src="{% static 'slider/4.jpg' %}"
+							alt="Book 1"
+							class="w-full h-full object-cover"
+						/>
+						<div
+							class="absolute inset-0 flex flex-col items-center justify-center text-white"
+						>
+							<h2 class="flex justify-center items-center">
+								Путешествуйте с нашими книгами
+							</h2>
+							<p class="text-lg">
+								Откройте для себя разные страны и эпохи, не выходя из дома
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</body>
+{% endblock %}

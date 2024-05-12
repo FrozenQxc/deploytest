@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<h2 id="blogtitle" class="font-bold text-center">Блог</h2>
+
+<div class="flex justify-center">
+	<form method="post">
+		{% csrf_token %}
+		<div class="mb-2">
+			<label for="category" class="block">Выбор категории:</label>
+			<select name="category_id" id="category" class="form-select">
+				{% for category in categories %}
+				<option value="{{ category.id }}">{{ category.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Найти</button>
+	</form>
+</div>
+
+<div class="text-center">
+	<a href="{% url 'blog' %}" class="block">Сбросить</a>
+</div>
+
+{% for blog in blogs %}
+<div
+	class="flex rounded-lg mx-auto justify-center items-center mb-12 bg-white w-[400px] p-5"
+>
+	<div class="w-72">
+		<div>
+			<a href="{% url 'blog:detail' blog.id %}">
+				<h2 class="text-lg font-bold">{{ blog.title }}</h2>
+			</a>
+			<h4 class="mt-2">{{ blog.description|striptags|truncatechars:100 }}</h4>
+			<h5 class="text-xs uppercase">{{ blog.date|date:'M d Y' }}</h5>
+			<h5 class="text-xs">{{ blog.categories.first.name }}</h5>
+		</div>
+	</div>
+</div>
+{% endfor %} {% endblock %}
